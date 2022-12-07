@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://widget.tscn" type="PackedScene" id=1]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.663313, -0.471972, 0.58074, 0, 0.776035, 0.630689, -0.748342, -0.418344, 0.514754, 2.46928, 5.71424, 3.59819 )
+
+[node name="widget" parent="." instance=ExtResource( 1 )]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://widget.gd" type="Script" id=1]
+
+[sub_resource type="PrismMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.239216, 0.623529, 0.156863, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.866667, 0.105882, 0.105882, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.156863, 0.372549, 0.623529, 1 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Y_axis_green" type="CSGMesh" parent="."]
+transform = Transform( 0.53, 0, 0, 0, 1.561, 0, 0, 0, 0.163, 0, 2, 0 )
+mesh = SubResource( 1 )
+material = SubResource( 2 )
+
+[node name="X_axis_red" type="CSGMesh" parent="."]
+transform = Transform( -0.00866711, -1.56079, 0, 0.529929, -0.0255271, 0, 0, 0, 0.163, -1.43503, 0.663363, 0 )
+mesh = SubResource( 1 )
+material = SubResource( 3 )
+
+[node name="z_axis_blue" type="CSGMesh" parent="."]
+transform = Transform( 1.17995e-05, 0.00212488, -0.163, 0.529929, -0.0255271, 0, -0.0086671, -1.56079, -0.00022191, -0.0285997, 0.663363, -1.69446 )
+mesh = SubResource( 1 )
+material = SubResource( 4 )
