@@ -1,6 +1,6 @@
 extends Spatial
 
-
+var t = 0.0 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -13,6 +13,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	t += delta
+	
 	var basis = Basis()
 	print(basis)
 	transform.basis.x = Vector3(.7, 0, -.7) # Vector pointing along the X axis
@@ -20,5 +23,8 @@ func _process(delta):
 	transform.basis.z = Vector3(.7, 0, .7) # Vector pointing along the Z axis
 	print(basis) # Replace with function body.
 	#var basis_camera = camera.global_position
-	var child_two_position = camera.global_transform
-	print("camera position", child_two_position)
+	var camera_pos = camera.global_transform
+	var camera_basis = transform.basis
+	print("camera position", camera_basis.x)
+	#self.transform = self.transform.looking_at(camera.translation,camera_basis.y)
+	self.transform.origin = lerp(self.transform.origin,camera.transform.origin,.001)
